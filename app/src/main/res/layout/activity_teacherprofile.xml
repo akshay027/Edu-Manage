@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="horizontal"
+    tools:context="com.exalogic.edumanage.Activities.ParentActivities.TeacherprofileActivity">
+
+    <LinearLayout
+        android:id="@+id/llparentteacherdetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+        <EditText
+            android:id="@+id/etTeacherSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:hint="Enter Teacher Name"
+            android:maxLines="1"
+            android:padding="7dp" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/teacherProfileRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etStudentSearch"
+            android:background="@color/white"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_nodata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="NO TEACHER AVAILABLE"
+            android:background="@color/white"
+            android:textSize="17dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/changeRole"
+            android:icon="@drawable/ic_cached_black_24dp"
+            android:title="Change Role" />
+        <item
+            android:id="@+id/changeBranch"
+            android:icon="@drawable/ic_cached_black_24dp"
+            android:title="Change Branch" />
+        <item
+            android:id="@+id/notice_board"
+            android:icon="@drawable/ic_notceboard"
+            android:title="Notice Board" />
+        <item
+            android:id="@+id/holiday"
+            android:icon="@drawable/ic_event"
+            android:title="Holiday" />
+       <!-- <item
+            android:id="@+id/leave"
+            android:icon="@drawable/ic_attendance"
+            android:title="Leave Application" />
+        <item
+            android:id="@+id/department"
+            android:icon="@drawable/ic_depthead"
+            android:title="Department Head" />-->
+        <item
+            android:id="@+id/EmployeeAttendance"
+            android:icon="@drawable/academics_nav"
+            android:title="Attendance" />
+        <item
+            android:id="@+id/time_table"
+            android:icon="@drawable/ic_student_details"
+            android:title="TimeTable" />
+       <!-- <item
+            android:id="@+id/Assignsubstitute"
+            android:icon="@drawable/ic_add_subtopic"
+            android:title="Assign Substitute" />
+        <item
+            android:id="@+id/assign_class_teacher"
+            android:icon="@drawable/ic_assignteacher"
+            android:title="Assign Class Teacher" />
+        <item
+            android:id="@+id/assign_subject"
+            android:icon="@drawable/ic_tc"
+            android:title="Assign Subject" />
+        <item
+            android:id="@+id/payment"
+            android:icon="@drawable/ic_receipt_black_24dp"
+            android:title="Fees Details" />
+        <item
+            android:id="@+id/track_rides"
+            android:icon="@drawable/ic_directions_bus_black_24dp"
+            android:title="Track Rides" />-->
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
+    </group>
+</menu>

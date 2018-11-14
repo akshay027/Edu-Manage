@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Edu-Manage</string>
+    <string name="app_dashboard">DashBoard</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="title_activity_landing">inMegh</string>
+    <string name="tab_my_leave">My Leave</string>
+    <string name="tab_student_leave">Student Leave</string>
+    <string name="sun">SUN</string>
+    <string name="mon">MON</string>
+    <string name="tue">TUE</string>
+    <string name="wed">WED</string>
+    <string name="thu">THU</string>
+    <string name="fri">FRI</string>
+    <string name="sat">SAT</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_attendance">AttendanceActivity</string>
+    <string name="title_activity_leave">LeaveActivity</string>
+    <string name="title_activity_class_teacher_leave_tab">ClassTeacherLeaveTabActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_time_table_tab">TimeTableTabActivity</string>
+    <string name="title_activity_academic">AcademicActivity</string>
+    <string name="title_activity_academics">AcademicsActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_student_observation">StudentObservationActivity</string>
+    <string name="title_activity_schoolinfo">SchoolinfoActivity</string>
+    <string name="title_activity_parent_landing">ParentLandingActivity</string>
+    <string name="title_activity_transfer_certificate">TransferCertificateActivity</string>
+    <string name="title_activity_teacher_profile">TeacherProfileActivity</string>
+    <string name="title_activity_teacherprofilechecking">Teacherprofilechecking</string>
+    <string name="title_activity_teacherprofile">TeacherprofileActivity</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_parent_profile">ParentProfileActivity</string>
+    <string name="title_activity_parent_fees">ParentFeesActivity</string>
+    <string name="title_activity_admin_landing">AdminLandingActivity</string>
+
+    <string name="title_activity_admin_attendance">AdminAttendanceActivity</string>
+    <string name="title_activity_admin_attendance_detail">AdminAttendanceDetail</string>
+    <string name="title_activity_admin_student_attendance_detail">AdminStudentAttendanceDetail
+    </string>
+    <string name="title_activity_admin_time_table_tab">AdminTimeTableTabActivity</string>
+    <string name="title_activity_payment_history_tab">PaymentHistoryTabActivity</string>
+    <string name="title_activity_class_students_fragment">ClassStudentsFragment</string>
+    <string name="title_activity_main3">Main3Activity</string>
+
+
+</resources>

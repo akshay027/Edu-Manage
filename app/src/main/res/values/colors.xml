@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4dcbac</color>
+    <!--7f7cb9-->
+    <color name="colorPrimaryDark">#434075</color>
+    <color name="colorDark">#333</color>
+    <color name="colorAccent">#FF9900</color>
+
+    <color name="textBlackDark">#4c4c4c</color>
+    <color name="textBlackLight">#999999</color>
+
+    <color name="headingcolor">#37bc9b</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="purpleblue">#F86449C6</color>
+    <color name="red">#a60000</color>
+    <color name="green">#159400</color>
+    <color name="orange">#f57722</color>
+    <color name="gray_dark">#0b0b0b</color>
+    <color name="gray_light">#FF979595</color>
+    <color name="red_dark">#FF7B0202</color>
+    <color name="green_dark">#FF015401</color>
+    <color name="skyBlue">#0492ac</color>
+    <color name="skyBluelight">#5ae5ff</color>
+    <color name="holiday">#008080</color>
+    <color name="halfday">#d3ffce</color>
+    <color name="weekend">#eeeeee</color>
+    <color name="timetablenot">#36a9ba</color>
+    <color name="sender">#b25800</color>
+    <color name="receiver">#000000</color>
+
+    <color name="leave">#ff84d8</color>
+    <color name="chat_1">#ffa500</color>
+    <color name="chat_2">#088da5</color>
+    <color name="chat_3">#003366</color>
+    <color name="chat_4">#ab2100</color>
+    <color name="chat_5">#20b2aa</color>
+    <color name="chat_6">#008000</color>
+
+    <color name="present_am">#2a832a</color>
+    <color name="present_pm">#78d278</color>
+    <color name="attendancecolor">#FBCEB1</color>
+    <color name="grafcolor">#fdb78a</color>
+
+    <color name="leaveatten">#3bafda</color>
+    <color name="absentatten">#ff5454</color>
+    <color name="presentatten">#54be54</color>
+    <color name="halfdayatten">#f6bb42</color>
+    <color name="holidayatten">#facccc</color>
+    <color name="nonworkingdayatten">#bdbdbd</color>
+
+</resources>

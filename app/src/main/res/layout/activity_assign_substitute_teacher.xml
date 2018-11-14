@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#efefef"
+    tools:context="com.exalogic.edumanage.Activities.AdminActivities.AssignSubstituteTeacherActivity">
+
+    <LinearLayout
+        android:id="@+id/llassignmentdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_teacherAbsent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_below="@+id/etAbsent" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/errorsub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=" Absent teachers list should be available for substitution"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:visibility="gone"/>
+</LinearLayout>

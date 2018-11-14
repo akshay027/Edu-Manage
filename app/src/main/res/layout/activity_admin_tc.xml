@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_admin_tc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.exalogic.edumanage.Activities.AdminActivities.AdminTCActivity">
+
+    <LinearLayout
+        android:id="@+id/llteacherlistdetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:padding="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Transfer Certificate "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#37bc9b" />
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:hint="Enter student name"
+                android:maxLines="1"
+                android:padding="7dp" />
+
+            <TextView
+                android:id="@+id/tvErrorAnn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="No transfers applied!"
+                android:textSize="17dp"
+                android:visibility="gone" />
+
+            <ListView
+                android:id="@+id/tcView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/etStudentSearch"
+                android:background="#efefef"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

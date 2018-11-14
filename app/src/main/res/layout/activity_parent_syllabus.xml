@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="horizontal"
+    tools:context="com.exalogic.edumanage.Activities.ParentActivities.Parentsyllabus">
+
+    <LinearLayout
+        android:id="@+id/llparentteacherdetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:background="@color/textBlackLight" />
+
+        <EditText
+            android:id="@+id/etSearchSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:hint="Enter Subject Name"
+            android:maxLines="1"
+            android:padding="7dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/parentsyllabusRecyclerAdapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etStudentSearch"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_nodata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="NO SYLLABUS AVAILABLE"
+            android:textSize="17dp"
+            android:background="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

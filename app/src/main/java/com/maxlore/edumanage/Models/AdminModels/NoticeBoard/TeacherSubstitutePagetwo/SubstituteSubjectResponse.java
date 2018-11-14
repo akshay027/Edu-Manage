@@ -1,0 +1,86 @@
+package com.maxlore.edumanage.Models.AdminModels.NoticeBoard.TeacherSubstitutePagetwo;
+
+/**
+ * Created by maxlore on 08-Dec-16.
+ */
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
+public class SubstituteSubjectResponse {
+
+    @SerializedName("status")
+    @Expose
+    private Integer status;
+    @SerializedName("today_timetable_list")
+    @Expose
+    private List<SubstituteSubject> todayTimetableList = null;
+    @SerializedName("message")
+    @Expose
+    private String message;
+
+    /**
+     *
+     * @return
+     * The status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    /**
+     *
+     * @param status
+     * The status
+     */
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    /**
+     *
+     * @return
+     * The todayTimetableList
+     */
+    public List<SubstituteSubject> getTodayTimetableList() {
+        return todayTimetableList;
+    }
+
+    /**
+     *
+     * @param todayTimetableList
+     * The today_timetable_list
+     */
+    public void setTodayTimetableList(List<SubstituteSubject> todayTimetableList) {
+        this.todayTimetableList = todayTimetableList;
+    }
+
+    /**
+     *
+     * @return
+     * The message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     *
+     * @param message
+     * The message
+     */
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "SubstituteSubjectResponse{" +
+                "status=" + status +
+                ", todayTimetableList=" + todayTimetableList +
+                ", message='" + message + '\'' +
+                '}';
+    }
+}

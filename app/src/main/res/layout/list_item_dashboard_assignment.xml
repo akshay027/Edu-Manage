@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="4">
+
+
+    <TextView
+        android:id="@+id/tvAssStandard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Standard"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/textBlackDark" />
+
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="@color/textBlackLight" />
+
+    <TextView
+        android:id="@+id/tvAssSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Section "
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/textBlackDark" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="@color/textBlackLight" />
+    <TextView
+        android:id="@+id/tvAssSubject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="15dp"
+        android:text="Subject"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/textBlackDark" />
+
+
+
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="@color/textBlackLight" />
+
+    <TextView
+        android:id="@+id/tvAssTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="15dp"
+        android:gravity="center"
+        android:text="Title"
+        android:maxLines="4"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/textBlackDark" />
+
+
+
+</LinearLayout>
+

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_payment_history"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.exalogic.edumanage.Activities.ParentActivities.PaymentHistoryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvFrompayDatefilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_leaves"
+            android:drawablePadding="5dp"
+            android:hint="From Date"
+            android:inputType="date"
+            android:padding="7dp" />
+
+        <TextView
+            android:id="@+id/tvtopayDatefilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_leaves"
+            android:drawablePadding="5dp"
+            android:hint="To Date"
+            android:inputType="date"
+            android:padding="7dp" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/etSearchpayhistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:hint="Search Here"
+        android:maxLines="1"
+        android:padding="7dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/payhistoryrecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etStudentSearch" />
+
+        <TextView
+            android:id="@+id/tv_nodata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="NO DATA AVAILABLE"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>
+
+

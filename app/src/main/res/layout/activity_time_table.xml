@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.exalogic.edumanage.Activities.TeacherActivities.TimeTableActivity">
+    <ListView
+        android:id="@+id/lvDate"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="0.3"
+        android:choiceMode="singleChoice"
+        android:drawSelectorOnTop="false"
+        android:listSelector="@android:color/holo_blue_light" />
+
+    <ListView
+        android:id="@+id/lvPeriod"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/lvdate"
+        android:layout_weight="0.7"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_noSchedule"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:gravity="center"
+        android:text="No Data Available"
+        android:padding="7dp"/>
+</LinearLayout>

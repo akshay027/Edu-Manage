@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="vertical"
+    tools:context="com.exalogic.edumanage.Activities.TeacherActivities.StudentDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="3dp"
+            android:textColor="@color/white"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tvClassTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text=" My Students "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#37bc9b" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+        <EditText
+            android:id="@+id/et_Search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/white"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:hint="Enter Student Name"
+            android:maxLines="1"
+            android:padding="7dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerclassinfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+        <ImageView
+            android:id="@+id/ivclassMessage"
+            android:layout_width="42dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/mess"
+            android:scaleType="center"
+            android:layout_margin="16dp"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/circle1"
+            android:src="@drawable/ic_chat_black_24dp" />
+    </FrameLayout>
+</LinearLayout>
+
+
+

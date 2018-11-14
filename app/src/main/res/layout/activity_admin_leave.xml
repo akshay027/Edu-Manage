@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_admin_leave"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context="com.exalogic.edumanage.Activities.AdminActivities.AdminLeaveActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:hint="Search"
+            android:maxLines="1"
+            android:padding="7dp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/tv_nodata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text="NO DATA AVAILABLE"
+            android:textSize="17dp"
+            android:visibility="gone" />
+
+
+        <ListView
+            android:id="@+id/lv_leave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/tv_nodata"
+            android:layout_toRightOf="@+id/tv_nodata"
+            android:background="@android:color/white"
+            android:divider="@null" />
+    </LinearLayout>
+</LinearLayout>

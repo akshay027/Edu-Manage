@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.maxlore.edumanage">
+
+    <receiver
+        android:name="com.appboy.AppboyGcmReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND"
+        tools:ignore="WrongManifestParent">
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+            <category android:name="com.maxlore.edumanage" />
+        </intent-filter>
+    </receiver>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.exalogic.inmegh.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/edumanage"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="DATABASE"
+            android:value="inMegh.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.maxlore.edumanage.Models.TeacherModels.database" />
+
+        <activity
+            android:name=".Activities.TeacherActivities.SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".fcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".fcm.MyFirebaseInstanceIDService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".Activities.TeacherActivities.TeacherLandingActivity"
+            android:label="DashBoard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.SecondActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.AttendanceActivity"
+            android:label="Attendance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.LeaveActivity"
+            android:label="Apply Leave"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.ClassTeacherLeaveTabActivity"
+            android:label="Leave"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.TimeTableTabActivity"
+            android:label="Time Table"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.exalogic.edumanage.Activities.TeacherActivities.TeacherLandingActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.TeacherActivities.TimeTableActivity"
+            android:label="Time Table"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.AssignmentActivity"
+            android:label="Assignment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.AcademicsTabActivity"
+            android:label="Teacher Plan"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.StudentTabDetailsActivity"
+            android:label="Student Details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.StudentDetailActivity"
+            android:label="Student Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.PaymentActivity"
+            android:label="Payment"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".Activities.TeacherActivities.AssignmentDetail"
+            android:label="Assignment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.StudentInformationActivity"
+            android:label="Student Info"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.StudentObservationActivity"
+            android:label=" Create/View Observation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.TeacherActivities.SchoolinfoActivity"
+            android:label="School Info"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentLandingActivity"
+            android:label="DashBoard"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentLeaveActivity"
+            android:label="Apply Leave"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.TeacherprofileActivity"
+            android:label="Teacher Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentTransferCertificateActivity"
+            android:label="Transfer Certificate"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentTransferCertificateListItemActivity"
+            android:label="Transfer Certificate Applied"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAwuyG3cunv4VNuUr2hTKryebWRR26lY4I" />
+
+        <activity
+            android:name=".Activities.ParentActivities.MapsActivity"
+            android:label="@string/title_activity_maps">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.exalogic.edumanage.Activities.ParentActivities.ParentLandingActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.ParentActivities.ParentTimeTableActivity"
+            android:label="Time Table"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ParentActivities.Parentsyllabus"
+            android:label="Syllabus"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentObservation"
+            android:label="Student Observation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentProfileActivity"
+            android:label="Parent Profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentAssignmentActivity"
+            android:label="Assignment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.OwnAttendanceActivity"
+            android:label="Attendance"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentFeesActivity"
+            android:label="Fees"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentAttendanceActivity"
+            android:label="Student Attendance"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ChatActivity"
+            android:label="Chat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ChatListActivity"
+            android:label="Chat List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.AcademicsDailyDataActivity"
+            android:label="Daily Plan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.AcademicsMonthDataActivity"
+            android:label="Monthly Plan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.AcademicsYearDataActivity"
+            android:label="Yearly Plan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AssignSubstituteTeacherActivity"
+            android:label="Substitute Teacher"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.SubstituteTeacherPagetwo"
+            android:label="Choose Class"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.MonthlySecondPageActivity"
+            android:label="Create Daily Topic"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.TeacherActivities.AppInfoActivity"
+            android:label="App Info"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.PaymentHistoryActivity"
+            android:label="Payment History"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.FeeDetailSecondPage"
+            android:label="Fee Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.RoleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.SubstituteTeacherPageThree"
+            android:label="Substitute Teacher"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminNoticeBoardActivity"
+            android:label="Notice Board"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminLandingActivity"
+            android:label="Admin"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminAssignSubjectActivity"
+            android:label="Teacher List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AssignClassteacher"
+            android:label="Assign Class Teacher"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.TeacherListActivity"
+            android:label="Teacher List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminAttendanceActivity"
+            android:label="Attendance"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminAttendanceDetail"
+            android:label="Staff Attendance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminStudentAttendanceDetail"
+            android:label="Student Attendance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminAssignSubjectDetailsActivity"
+            android:label="Subject List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminTimeTableTabActivity"
+            android:label="TimeTable"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminTeacherTimeTableActivity"
+            android:label="Teacher Time Table"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminClassTimeTableActivity"
+            android:label="Class Time table"
+            android:screenOrientation="portrait" />
+
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".Activities.AdminActivities.AdminLeaveActivity"
+            android:label="Leave List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminEditLeaveActivity"
+            android:label="Edit Leave"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminHoliday"
+            android:label="Holiday"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminStudentAbsentListActivity"
+            android:label="Absent Students"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminTCActivity"
+            android:label="Transfer Certificate"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminResignationActivity"
+            android:label="Resignation List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminAbsentTeacherActivity"
+            android:label="Absent Staffs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fragment.ClassStudentsFragment"
+            android:label="@string/title_activity_class_students_fragment"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.AdminActivities.AdminCalenderEventActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.CalenderEventActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.Admintrackridepageone"
+            android:label="Track ride"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.Admintrackridepagetwo"
+            android:label="Track ride"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.TeacherActivities.TeacherEditLeaveActivity"
+            android:label="Edit Leave"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentRollActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Activities.ParentActivities.ParentSchoolInfoActivity"
+            android:label="School Info"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ParentActivities.ParentTimeTableClassActivity"
+            android:label="Time Table"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.ProfileImageviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.SchoolInfoImageviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ParentActivities.NewParentAttendanceActivity"
+            android:label="Attendance"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AdminActivities.PaymentTabActivity"
+            android:label="Fee Details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Fragment.DefaulterFragment" />
+        <activity android:name=".Activities.AdminActivities.FilterOptionsActivity" />
+        <activity
+            android:name=".Activities.ParentActivities.FeesPaymentMOdule"
+            android:label="Fee Structure" />
+        <activity android:name=".Activities.TeacherActivities.TeacherRollActivity" />
+        <activity
+            android:name=".Activities.TeacherActivities.NewTeachingPlanActivity"
+            android:label="Teaching Plan" />
+        <activity android:name=".Activities.AdminActivities.AdminBranchActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Activities.AdminActivities.AdminDepartmentHeadfirstPage"
+            android:label="Department Head" />
+        <activity
+            android:name=".Activities.AdminActivities.AssignDepartHead"
+            android:label="Department Head" />
+        <activity
+            android:name=".Activities.AdminActivities.EditDepartHead"
+            android:label="Edit Department Head" />
+        <activity
+            android:name=".Activities.AdminActivities.EditClassTeacher"
+            android:label="Edit Class Teacher" />
+        <activity
+            android:name=".Activities.InternetConnectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

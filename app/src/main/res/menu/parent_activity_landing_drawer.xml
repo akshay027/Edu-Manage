@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/choosestudent"
+            android:icon="@drawable/ic_cached_black_24dp"
+            android:title="Choose Child" />
+        <item
+            android:id="@+id/schoolInfo"
+            android:icon="@drawable/ic_schoolinfo"
+            android:title="School Info" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="Profile" />
+        <item
+            android:id="@+id/attendance"
+            android:icon="@drawable/academics_nav"
+            android:title="Attendance" />
+
+       <!-- <item
+            android:id="@+id/applyleave"
+            android:icon="@drawable/ic_attendance"
+            android:title="Apply Leave" />-->
+
+        <item
+            android:id="@+id/parenttimetable"
+            android:icon="@drawable/ic_student_details"
+            android:title="Timetable" />
+     <!--   <item
+            android:id="@+id/syllabus"
+            android:icon="@drawable/ic_import_contacts_black_24dp"
+            android:title="Syllabus" />
+
+        <item
+            android:id="@+id/assignment"
+            android:icon="@drawable/timetable_nav"
+            android:title="Assignment" />
+
+        <item
+            android:id="@+id/parentobservation"
+            android:icon="@drawable/assignment_nav"
+            android:title="Observation" />
+        <item
+            android:id="@+id/fees"
+            android:icon="@drawable/ic_receipt_black_24dp"
+            android:title="Fees" />
+
+        <item
+            android:id="@+id/paymenthistory"
+            android:icon="@drawable/ic_receipt_black_24dp"
+            android:title="Payment History" />
+        <item
+            android:id="@+id/teacherprofile"
+            android:icon="@drawable/ic_assignment_ind_black_24dp"
+            android:title="Teacher Profile" />
+
+        <item
+            android:id="@+id/trackride"
+            android:icon="@drawable/ic_directions_bus_black_24dp"
+            android:title="Track Ride" />
+        <item
+            android:id="@+id/applyfortransfer"
+            android:icon="@drawable/ic_tc"
+            android:title="Apply For Transfer" />-->
+        <item
+            android:id="@+id/parentlogout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
+    </group>
+</menu>

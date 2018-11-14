@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "399278063637",
+    "firebase_url": "https://edumanage-8cabb.firebaseio.com",
+    "project_id": "edumanage-8cabb",
+    "storage_bucket": "edumanage-8cabb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399278063637:android:ff0ef4cb1c7c0a6e",
+        "android_client_info": {
+          "package_name": "com.maxlore.edumanage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399278063637-o0eis6aef573u21v6mh0pltgdle4sm1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkAb-LMsL_IflH3_dzux0HdIl0VV-fMVs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

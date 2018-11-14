@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_admin_student_absent_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context="com.exalogic.edumanage.Activities.AdminActivities.AdminStudentAbsentListActivity">
+
+    <LinearLayout
+        android:id="@+id/llteacherlistdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:padding="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="1dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Absent "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#37bc9b" />
+
+                <EditText
+                    android:id="@+id/etabsentSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableLeft="@android:drawable/ic_menu_search"
+                    android:hint="Enter student name"
+                    android:maxLines="1"
+                    android:padding="7dp" />
+
+                <TextView
+                    android:id="@+id/tvErrorAnn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="No Student's are absent'"
+                    android:visibility="gone" />
+
+                <ListView
+                    android:id="@+id/studentlistView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/etStudentSearch"
+                    android:background="#efefef"
+                    android:scrollbars="vertical"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="1dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Leave"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#37bc9b" />
+
+                <EditText
+                    android:id="@+id/etleaveSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableLeft="@android:drawable/ic_menu_search"
+                    android:hint="Enter student name"
+                    android:maxLines="1"
+                    android:padding="7dp" />
+
+                <TextView
+                    android:id="@+id/tvErrorAnn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="No students are on leave "
+                    android:visibility="gone" />
+
+                <ListView
+                    android:id="@+id/studentleavelistView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/etStudentSearch"
+                    android:background="#efefef"
+                    android:scrollbars="vertical"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

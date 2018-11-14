@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "658789855722",
+    "firebase_url": "https://inmegh-165604.firebaseio.com",
+    "project_id": "inmegh-165604",
+    "storage_bucket": "inmegh-165604.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658789855722:android:3b7ba16f5c4ee55d",
+        "android_client_info": {
+          "package_name": "com.exalogic.inmegh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658789855722-3gqbp9v8equde2qp5i6j00gl44rq9s6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM51fOynxNYA1mn6Qf7xNgeFls6ksIKXg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

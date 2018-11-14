@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/changeRole"
+            android:icon="@drawable/ic_cached_black_24dp"
+            android:title="Change Role" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="Profile" />
+        <item
+            android:id="@+id/schoolInfo"
+            android:icon="@drawable/ic_schoolinf"
+            android:title="School Info" />
+        <item
+            android:id="@+id/ownat"
+            android:icon="@drawable/ic_schoolinf"
+            android:title="Attendance" />
+        <item
+            android:id="@+id/attendance"
+            android:icon="@drawable/ic_attendan"
+            android:title="Student Attendance" />
+      <!--  <item
+            android:id="@+id/leave"
+            android:icon="@drawable/ic_leaves"
+            android:title="Leave" />-->
+        <item
+            android:id="@+id/timeTable"
+            android:icon="@drawable/ic_timetabl"
+            android:title="Time Table" />
+        <!--<item
+            android:id="@+id/assignment"
+            android:icon="@drawable/assignment_nav"
+            android:title="Assignment" />-->
+       <!-- <item
+            android:id="@+id/academics"
+            android:icon="@drawable/ic_assign"
+            android:title="Teaching Plan" />
+        <item
+            android:id="@+id/studentdetails"
+            android:icon="@drawable/ic_assignteacher"
+            android:title="Students Details" />-->
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
+    </group>
+</menu>

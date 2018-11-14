@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="horizontal"
+    tools:context="com.exalogic.edumanage.Activities.AdminActivities.AdminDepartmentHeadfirstPage">
+
+    <LinearLayout
+        android:id="@+id/lldepthead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_departmenthead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etStudentSearch"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />
+    </LinearLayout>
+</LinearLayout>

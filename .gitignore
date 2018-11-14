@@ -1,0 +1,12 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.idea/inspectionProfiles/
+app/hs_err_pid1424.log
+app/replay_pid1424.log.gradle/
+.gradle/

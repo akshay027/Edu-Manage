@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#efefef"
+    tools:context="com.exalogic.edumanage.Activities.AdminActivities.AssignClassteacher">
+
+    <LinearLayout
+        android:id="@+id/llassignmentdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lv_classteacher"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etStudentSearch"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</LinearLayout>
