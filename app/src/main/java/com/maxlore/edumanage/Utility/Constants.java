@@ -7,13 +7,9 @@ import android.content.Context;
  */
 public class Constants {
 
-    //public static final String Host = "http://192.168.1.10:5000/api/v1";
-    //public static final String HostImage = "http://192.168.1.10:5000/";
-   // public static final String Host = "https://edumanage.org/api/v1";
-    //public static final String HostImage = "https://edumanage.org/";
+    //public static final String Host = "https://edumanage.org/api/v1";
 
-    public static final String Host = "http://192.168.1.27:3000/api/v1";
-    public static final String HostImage = "http://192.168.1.27:3000/";
+    public static final String Host = "http://192.168.1.12:3002/api/v1";
 
     public static final String CITY = "city";
 
@@ -75,6 +71,7 @@ public class Constants {
     public static final int FUTUREDATE = 7;
     public static final int WORKINGDAYNOTASSIGN = 8;
     public static final int STUDENTTIMETABLENOTASSIGN = 8;
+    public static final int NORMAL_DAYS = 10;
     public static final int LOCATION_PERMISSION_REQUEST_CODE = 110;
     public static Context context;
     public static final String TEACHING = "Teaching";

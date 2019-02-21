@@ -286,7 +286,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.AdminActivities.AdminLandingActivity"
-            android:label="Admin"
+            android:label="DashBoard"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

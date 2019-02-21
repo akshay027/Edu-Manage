@@ -108,9 +108,11 @@ public class TeacherRollActivity extends AppCompatActivity {
                     startActivity(intent);
                     finishAffinity();
                 } else if (PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_USER_TYPE).equalsIgnoreCase("Branch Admin")) {
-                    intent = new Intent(getApplicationContext(), AdminLandingActivity.class);
+                    Toast.makeText(getApplicationContext(), "Branch Admin login not yet created, Please choose some other fields", Toast.LENGTH_SHORT).show();
+
+                    /* intent = new Intent(getApplicationContext(), TeacherLandingActivity.class);
                     startActivity(intent);
-                    finishAffinity();
+                    finishAffinity();*/
                 }
                 Toast.makeText(getApplicationContext(), "Only One Role Allotted", Toast.LENGTH_SHORT).show();
 
@@ -129,13 +131,13 @@ public class TeacherRollActivity extends AppCompatActivity {
                             Intent intent = new Intent(getApplicationContext(), TeacherLandingActivity.class);
                             startActivity(intent);
                             finishAffinity();
-                        }else if ( PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_USER_TYPE).equalsIgnoreCase("Principal"))
-                        {
+                        } else if (PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_USER_TYPE).equalsIgnoreCase("Principal")) {
                             Toast.makeText(getApplicationContext(), "Principal login not yet created, Please choose some other fields", Toast.LENGTH_SHORT).show();
-                        }else if (PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_USER_TYPE).equalsIgnoreCase("Branch Admin")) {
-                            Intent intent = new Intent(getApplicationContext(), AdminLandingActivity.class);
+                        } else if (PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_USER_TYPE).equalsIgnoreCase("Branch Admin")) {
+                            Toast.makeText(getApplicationContext(), "Branch Admin login not yet created, Please choose some other fields", Toast.LENGTH_SHORT).show();
+                           /* Intent intent = new Intent(getApplicationContext(), TeacherLandingActivity.class);
                             startActivity(intent);
-                            finishAffinity();
+                            finishAffinity();*/
                         }
 
                         //intent.putExtra("id", dialogposition);

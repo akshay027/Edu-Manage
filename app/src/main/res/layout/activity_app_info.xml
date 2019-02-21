@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_app_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="com.exalogic.edumanage.Activities.TeacherActivities.AppInfoActivity">
+    tools:context="com.maxlore.edumanage.Activities.TeacherActivities.AppInfoActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,72 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
-
-                <com.exalogic.edumanage.widgets.RoundedImageView
-                    android:id="@+id/ivStatus"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/ic_leaveapproved" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="     Approved"
-                    android:textColor="#000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
-
-                <com.exalogic.edumanage.widgets.RoundedImageView
-                    android:id="@+id/leavecancelled"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/ic_leavecancelled" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="     Rejected"
-                    android:textColor="#000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
-
-                <com.exalogic.edumanage.widgets.RoundedImageView
-                    android:id="@+id/leaveonhold"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/ic_leaveonhold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="     On Hold"
-                    android:textColor="#000" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,7 +32,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/presentatten"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -120,7 +55,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/absentatten"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -143,7 +78,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/halfdayatten"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -165,7 +100,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/nonworkingdayatten"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -175,28 +110,7 @@
                     android:textColor="#000" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
 
-                <View
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="10dp"
-                    android:background="@color/sender"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="    Future Date"
-                    android:textColor="#000" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -211,7 +125,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/holidayatten"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -234,7 +148,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/textBlackDark"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -257,7 +171,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/leaveatten"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"

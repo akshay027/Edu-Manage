@@ -446,13 +446,15 @@ public class TeacherLandingActivity extends AppCompatActivity
                     @Override
                     public void success(DashboardResponse dashRes, Response response) {
                         try {
-                            UIUtil.stopProgressDialog(getApplicationContext());
+
                             Log.e("API", "dashboardResponses" + dashRes.toString());
                             Log.e("API", "dashboardResponses" + response.getBody());
                             if (dashRes.getStatus() == Constants.SUCCESS) {
                                 bindData(dashRes.getDashboard());
+                                UIUtil.stopProgressDialog(getApplicationContext());
 
                             } else {
+                                UIUtil.stopProgressDialog(getApplicationContext());
                                 Toast.makeText(getApplicationContext(), "" + dashRes.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {

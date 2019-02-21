@@ -4,6 +4,7 @@ package com.maxlore.edumanage.Adapters.AdminAdapters;
  * Created by maxlore on 06-Oct-16.
  */
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -36,9 +37,9 @@ public class AttendanceSecondPageStudent extends RecyclerView.Adapter<Attendance
     public static OnItemClickListener mItemClickListener;
     private boolean isAmPm, isHoliday;
 
-    public AttendanceSecondPageStudent(Activity activity, ArrayList<StudentClassAttendance> arrayList, boolean isAmPm, boolean isHoliday, Context context ) {
+    public AttendanceSecondPageStudent(Activity activity, ArrayList<StudentClassAttendance> arrayList, boolean isAmPm, boolean isHoliday, Context context) {
         this.arrayList = arrayList;
-        this.contexta=context;
+        this.contexta = context;
         this.isAmPm = isAmPm;
         this.isHoliday = isHoliday;
         this.activity = (AdminStudentAttendanceDetail) activity;
@@ -68,81 +69,91 @@ public class AttendanceSecondPageStudent extends RecyclerView.Adapter<Attendance
         if (isAmPm) {
             if (attendance.getAttendance() == Constants.PRESENT) {
                 holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.presentatten));
-           /* holder.tv_atttype.setText("PRESENT");*/
+                /* holder.tv_atttype.setText("PRESENT");*/
             } else if (attendance.getAttendance() == Constants.ABSENT) {
                 holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.absentatten));
-            /*holder.tv_atttype.setText("ABSENT");*/
+                /*holder.tv_atttype.setText("ABSENT");*/
             } else if (attendance.getAttendance() == Constants.HALFDAYATTEN) {
                 holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.halfdayatten));
-            /*holder.tv_atttype.setText("HOLIDAY");*/
+                /*holder.tv_atttype.setText("HOLIDAY");*/
             } else if (attendance.getAttendance() == Constants.NONWORKINGDAY) {
                 holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.nonworkingdayatten));
-           /* holder.tv_atttype.setText("NO WORK DAY TODAY");*/
+                /* holder.tv_atttype.setText("NO WORK DAY TODAY");*/
             } else if ((attendance.getAttendance() == Constants.FUTUREDATE)) {
-                holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.sender));
-         /*   holder.tv_atttype.setText("FUTURE DATE");*/
+                holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.skyBluelight));
+                /*   holder.tv_atttype.setText("FUTURE DATE");*/
             } else if ((attendance.getAttendance() == Constants.SCHOOLHOLIDAY)) {
                 holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.holidayatten));
-           /* holder.tv_atttype.setText("HOLIDAY MARK");*/
+                /* holder.tv_atttype.setText("HOLIDAY MARK");*/
             } else if ((attendance.getAttendance() == Constants.STUDENTTIMETABLENOTASSIGN)) {
                 holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.textBlackDark));
-           /* holder.tv_atttype.setText("PREVIOUS WORK DAY");*/
+                /* holder.tv_atttype.setText("PREVIOUS WORK DAY");*/
             } else if ((attendance.getAttendance() == Constants.LEAVEDAY)) {
                 holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.leaveatten));
-         /* holder.tv_atttype.setText("LEAVE APPLIED");*/
+                /* holder.tv_atttype.setText("LEAVE APPLIED");*/
+            } else if ((attendance.getAttendance() == Constants.NORMAL_DAYS)) {
+
+                holder.viewPresentAbsent.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.border_style));
+                /* holder.tv_atttype.setText("LEAVE APPLIED");*/
             }
         } else {
             if (attendance.isPMSelected()) {
                 if (attendance.getAttendancePm() == Constants.PRESENT) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.presentatten));
-           /* holder.tv_atttype.setText("PRESENT");*/
+                    /* holder.tv_atttype.setText("PRESENT");*/
                 } else if (attendance.getAttendancePm() == Constants.ABSENT) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.absentatten));
-            /*holder.tv_atttype.setText("ABSENT");*/
+                    /*holder.tv_atttype.setText("ABSENT");*/
                 } else if (attendance.getAttendancePm() == Constants.HALFDAYATTEN) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.halfdayatten));
-            /*holder.tv_atttype.setText("HOLIDAY");*/
+                    /*holder.tv_atttype.setText("HOLIDAY");*/
                 } else if (attendance.getAttendancePm() == Constants.NONWORKINGDAY) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.nonworkingdayatten));
-           /* holder.tv_atttype.setText("NO WORK DAY TODAY");*/
+                    /* holder.tv_atttype.setText("NO WORK DAY TODAY");*/
                 } else if ((attendance.getAttendancePm() == Constants.FUTUREDATE)) {
-                    holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.sender));
-         /*   holder.tv_atttype.setText("FUTURE DATE");*/
+                    holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.skyBluelight));
+                    /*   holder.tv_atttype.setText("FUTURE DATE");*/
                 } else if ((attendance.getAttendancePm() == Constants.SCHOOLHOLIDAY)) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.holidayatten));
-           /* holder.tv_atttype.setText("HOLIDAY MARK");*/
+                    /* holder.tv_atttype.setText("HOLIDAY MARK");*/
                 } else if ((attendance.getAttendancePm() == Constants.STUDENTTIMETABLENOTASSIGN)) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.textBlackDark));
-           /* holder.tv_atttype.setText("PREVIOUS WORK DAY");*/
+                    /* holder.tv_atttype.setText("PREVIOUS WORK DAY");*/
                 } else if ((attendance.getAttendancePm() == Constants.LEAVEDAY)) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.leaveatten));
-         /* holder.tv_atttype.setText("LEAVE APPLIED");*/
+                    /* holder.tv_atttype.setText("LEAVE APPLIED");*/
+                } else if ((attendance.getAttendance() == Constants.NORMAL_DAYS)) {
+                    holder.viewPresentAbsent.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.border_style));
+                    /* holder.tv_atttype.setText("LEAVE APPLIED");*/
                 }
             } else {
                 if (attendance.getAttendance() == Constants.PRESENT) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.presentatten));
-           /* holder.tv_atttype.setText("PRESENT");*/
+                    /* holder.tv_atttype.setText("PRESENT");*/
                 } else if (attendance.getAttendance() == Constants.ABSENT) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.absentatten));
-            /*holder.tv_atttype.setText("ABSENT");*/
+                    /*holder.tv_atttype.setText("ABSENT");*/
                 } else if (attendance.getAttendance() == Constants.HALFDAYATTEN) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.halfdayatten));
-            /*holder.tv_atttype.setText("HOLIDAY");*/
+                    /*holder.tv_atttype.setText("HOLIDAY");*/
                 } else if (attendance.getAttendance() == Constants.NONWORKINGDAY) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.nonworkingdayatten));
-           /* holder.tv_atttype.setText("NO WORK DAY TODAY");*/
+                    /* holder.tv_atttype.setText("NO WORK DAY TODAY");*/
                 } else if ((attendance.getAttendance() == Constants.FUTUREDATE)) {
-                    holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.sender));
-         /*   holder.tv_atttype.setText("FUTURE DATE");*/
+                    holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.skyBluelight));
+                    /*   holder.tv_atttype.setText("FUTURE DATE");*/
                 } else if ((attendance.getAttendance() == Constants.SCHOOLHOLIDAY)) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.holidayatten));
-           /* holder.tv_atttype.setText("HOLIDAY MARK");*/
+                    /* holder.tv_atttype.setText("HOLIDAY MARK");*/
                 } else if ((attendance.getAttendance() == Constants.STUDENTTIMETABLENOTASSIGN)) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.textBlackDark));
-           /* holder.tv_atttype.setText("PREVIOUS WORK DAY");*/
+                    /* holder.tv_atttype.setText("PREVIOUS WORK DAY");*/
                 } else if ((attendance.getAttendance() == Constants.LEAVEDAY)) {
                     holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.leaveatten));
-         /* holder.tv_atttype.setText("LEAVE APPLIED");*/
+                    /* holder.tv_atttype.setText("LEAVE APPLIED");*/
+                } else if ((attendance.getAttendance() == Constants.NORMAL_DAYS)) {
+                    holder.viewPresentAbsent.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.border_style));
+                    /* holder.tv_atttype.setText("LEAVE APPLIED");*/
                 }
             }
         }
@@ -154,7 +165,7 @@ public class AttendanceSecondPageStudent extends RecyclerView.Adapter<Attendance
 //        if (isHoliday && !attendance.getMark()) {
 //            holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.textBlackLight));
 //        }
-        Picasso.with(contexta).load( attendance.getPhoto()).resize(50, 50)
+        Picasso.with(contexta).load(attendance.getPhoto()).resize(50, 50)
                 .transform(new CircleTransform()).into(holder.imageview);
         holder.tvStudent.setText(attendance.getStudentName());
     }

@@ -125,6 +125,7 @@ public class AdminAttendanceActivity extends AppCompatActivity {
                 dept_id = employeeAttendanceList.get(currentposition).getDepartmentId().toString();
                 Intent intent = new Intent(AdminAttendanceActivity.this, AdminAttendanceDetail.class);
                 intent.putExtra("department selected", dept_id);
+                intent.putExtra("departmentName", employeeAttendanceList.get(currentposition).getDepartmentName());
                 startActivity(intent);
             }
         });
@@ -150,6 +151,8 @@ public class AdminAttendanceActivity extends AppCompatActivity {
                 dept_id = adminStudentAttendanceList.get(currentposition).getSectionId().toString();
                 Intent intent = new Intent(AdminAttendanceActivity.this, AdminStudentAttendanceDetail.class);
                 intent.putExtra("Section selected", dept_id);
+                intent.putExtra("sectionName", adminStudentAttendanceList.get(currentposition).getSectionName());
+                intent.putExtra("standardName", adminStudentAttendanceList.get(currentposition).getStandardName());
                 startActivity(intent);
             }
         });

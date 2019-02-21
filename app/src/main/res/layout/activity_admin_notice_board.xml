@@ -32,18 +32,19 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
+
                     android:padding="5dp">
 
-             <!--       <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/meeting_schdule"
-                        android:layout_weight="0.3"
-                        android:padding="5dp"
-                        android:text="Title"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />-->
+                    <!--       <TextView
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/meeting_schdule"
+                               android:layout_weight="0.3"
+                               android:padding="5dp"
+                               android:text="Title"
+                               android:textAppearance="?android:attr/textAppearanceSmall"
+                               android:textColor="@color/black"
+                               android:textStyle="bold" />-->
 
 
                     <EditText
@@ -62,9 +63,12 @@
 
                 </LinearLayout>
 
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@color/black_overlay" />
 
                 <LinearLayout
@@ -77,21 +81,21 @@
                     android:padding="5dp"
                     android:visibility="gone">
 
-                <!--    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/standard_tv"
-                        android:layout_weight="0.6"
-                        android:text="Date"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textStyle="bold" />
--->
-                   <!-- <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:text=":"
-                        android:textStyle="bold" />-->
+                    <!--    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/standard_tv"
+                            android:layout_weight="0.6"
+                            android:text="Date"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textStyle="bold" />
+    -->
+                    <!-- <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginRight="10dp"
+                         android:text=":"
+                         android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/tvHalfDate"
@@ -112,17 +116,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+
                     android:padding="5dp">
 
-              <!--      <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/standard_tv"
-                        android:layout_weight="0.3"
-                        android:text="Message"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />-->
+                    <!--      <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_below="@+id/standard_tv"
+                              android:layout_weight="0.3"
+                              android:text="Message"
+                              android:textAppearance="?android:attr/textAppearanceSmall"
+                              android:textColor="@color/black"
+                              android:textStyle="bold" />-->
 
 
                     <EditText
@@ -135,12 +142,17 @@
                         android:hint="Enter Message"
                         android:maxLength="100"
                         android:maxLines="2"
-                        android:padding="15dp"
+                        android:padding="10dp"
                         android:text=""
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
-
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/black_overlay" />
                 <TextView
                     android:id="@+id/btnCreate"
                     android:layout_width="match_parent"
@@ -178,17 +190,17 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rvAnnouncements"
                     android:layout_width="match_parent"
-                    android:background="@color/white"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/white" />
 
                 <TextView
                     android:id="@+id/tv_nodata"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:gravity="center"
-                    android:text="No Data Available"
                     android:padding="7dp"
+                    android:text="No Data Available"
                     android:visibility="gone" />
             </LinearLayout>
         </LinearLayout>

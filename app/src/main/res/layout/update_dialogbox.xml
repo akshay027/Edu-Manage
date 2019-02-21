@@ -23,8 +23,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:text="UpdateInfo"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Update Information"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -33,8 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:maxLines="3"
-        android:text="This is old version and does not operate.Please update application"
-        android:textSize="20dp" />
+        android:maxLines="6"
+        android:text="This is old version and does not operate.Please update application / Uninstall it and Install Again. "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout>

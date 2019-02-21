@@ -20,6 +20,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
@@ -28,6 +30,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.maxlore.edumanage.Models.AdminModels.NoticeBoard.AttendanceDetail.StudentClassAttendance;
+import com.maxlore.edumanage.Models.StatusResponseClass;
 import com.maxlore.edumanage.R;
 import com.maxlore.edumanage.API.RetrofitAPI;
 import com.maxlore.edumanage.Adapters.AdminAdapters.AttendanceSecondPageAdapter;
@@ -61,17 +66,20 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
     private AttendanceSecondPageAdapter attendanceRecyclerAdapter;
     private String date, currentdate;
     private String pos;
-    private CheckBox checkbox_selectall;
+    private CheckBox checkbox_selectall, checkbox_dummy;
     private ProgressBar progress;
-    private TextView tvDate, ivPresent, ivAbsent, ivNoclass;
+    private TextView tvDate, ivPresent, ivAbsent, ivNoclass,tvclassName;
     private EditText etSearch;
     private boolean isHoliday = false, presentAll, absentAll;
     private Handler handler;
     public static final int TIME_OUT = 1000;
     private int currentPosition;
-    private LinearLayout llAmPm;
-    private int check = 0;
+    private LinearLayout llAmPm, selectView,footerview;
+    private int check = 0, status = 1;
+    private CharSequence searchTextCount;
     private TextView tv_noattendancedata;
+    private Animation myAnim;
+    private String reasonEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,21 +90,32 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        tvclassName=findViewById(R.id.tvclassName);
+        selectView = findViewById(R.id.selectView);
+        footerview=findViewById(R.id.footerview);
         progress = (ProgressBar) findViewById(R.id.progress);
+
         checkbox_selectall = (CheckBox) findViewById(R.id.checkbox_selectall);
+        checkbox_dummy = (CheckBox) findViewById(R.id.checkbox_dummy);
+
         tvDate = (TextView) findViewById(R.id.tvDate);
         pos = getIntent().getStringExtra("department selected");
-
+        tvclassName.setText("Department -"+getIntent().getStringExtra("departmentName"));
         tv_noattendancedata = findViewById(R.id.tv_noattendancedata);
         ivPresent = (TextView) findViewById(R.id.ivPresent);
         ivAbsent = (TextView) findViewById(R.id.ivAbsent);
         ivNoclass = (TextView) findViewById(R.id.ivNoclass);
         attendanceRecyclerView = (RecyclerView) findViewById(R.id.attendanceRecyclerView);
 
+        checkbox_selectall.setVisibility(View.VISIBLE);
+        checkbox_dummy.setVisibility(View.GONE);
+
         ivPresent.setOnClickListener(this);
         ivAbsent.setOnClickListener(this);
         ivNoclass.setOnClickListener(this);
         checkbox_selectall.setOnClickListener(this);
+        checkbox_dummy.setOnClickListener(this);
         etSearch = (EditText) findViewById(R.id.etSearch);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
@@ -106,10 +125,29 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
                 return false;
             }
         });
+        checkbox_dummy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked == true) {
+                    check = 0;
+                    for (int i = 0; i < attendanceArrayList.size(); i++) {
+                        attendanceArrayList.get(i).setCheck_box(1);
+                        check = check + 1;
+                    }
+                    attendanceRecyclerAdapter.notifyDataSetChanged();
+                    checkbox_selectall.setChecked(true);
+                    checkbox_selectall.setVisibility(View.VISIBLE);
+                    checkbox_dummy.setVisibility(View.GONE);
+
+                }
+
+            }
+        });
         checkbox_selectall.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true) {
+                    check = 0;
                     for (int i = 0; i < attendanceArrayList.size(); i++) {
                         attendanceArrayList.get(i).setCheck_box(1);
                         check = check + 1;
@@ -119,7 +157,7 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
                 } else if (isChecked == false) {
                     for (int i = 0; i < attendanceArrayList.size(); i++) {
                         attendanceArrayList.get(i).setCheck_box(0);
-                        check = check - 1;
+                        check = 0;
                     }
                     Log.e("check -", "====" + check);
                     attendanceRecyclerAdapter.notifyDataSetChanged();
@@ -156,16 +194,34 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
 
             @Override
             public void onTextChanged(final CharSequence s, int start, int before, int count) {
-                if (!TextUtils.isEmpty(s) && s.length() > 2) {
+
+                searchTextCount = s;
+                if (s.length() == 0) {
+                    if (status == 1) {
+                        checkbox_selectall.setVisibility(View.VISIBLE);
+                        checkbox_dummy.setVisibility(View.GONE);
+                    } else if (status == 0) {
+                        checkbox_selectall.setVisibility(View.GONE);
+                        checkbox_dummy.setVisibility(View.VISIBLE);
+                    }
+
+                } else {
+                    checkbox_selectall.setVisibility(View.GONE);
+                    checkbox_dummy.setVisibility(View.GONE);
+                }
+
+                if (!TextUtils.isEmpty(s) && s.length() > 0) {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
+                            //  checkbox_selectall.setVisibility(View.GONE);
                             filterSearch(s.toString());
                         }
                     }, TIME_OUT);
                 } else {
                     if (searchAttendanceArrayList.size() > 0) {
                         attendanceArrayList.clear();
+                        // checkbox_selectall.setVisibility(View.VISIBLE);
                         attendanceArrayList.addAll(searchAttendanceArrayList);
                         attendanceRecyclerAdapter.notifyDataSetChanged();
                     }
@@ -244,17 +300,20 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
         overridePendingTransition(R.anim.left_to_center, R.anim.center_to_right);
     }
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ivAbsent:
+                v.startAnimation(myAnim);
+               // absentConfirmation(2);
                 confirmation(2);
                 break;
             case R.id.ivPresent:
+                v.startAnimation(myAnim);
                 confirmation(1);
                 break;
             case R.id.ivNoclass:
+                v.startAnimation(myAnim);
                 confirmation(3);
                 break;
         }
@@ -360,6 +419,10 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
                             if (teachersResponse.getStatus() == Constants.SUCCESS) {
                                 bindDataforAttendance(teachersResponse.getList());
                                 checkbox_selectall.setChecked(false);
+                                checkbox_selectall.setVisibility(View.VISIBLE);
+                                checkbox_dummy.setVisibility(View.GONE);
+                                etSearch.setText("");
+                                check = 0;
                                 attendanceRecyclerAdapter.notifyDataSetChanged();
                             } else {
                                 Toast.makeText(getApplicationContext(), "" + teachersResponse.getMessage(), Toast.LENGTH_SHORT).show();
@@ -397,9 +460,13 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
         attendanceRecyclerView.setAdapter(attendanceRecyclerAdapter);
 
         if (attendanceArrayList.size() <= 0) {
+            selectView.setVisibility(View.GONE);
+            footerview.setVisibility(View.GONE);
             tv_noattendancedata.setVisibility(View.VISIBLE);
             attendanceRecyclerView.setVisibility(View.GONE);
         } else {
+            selectView.setVisibility(View.VISIBLE);
+            footerview.setVisibility(View.VISIBLE);
             tv_noattendancedata.setVisibility(View.GONE);
             attendanceRecyclerView.setVisibility(View.VISIBLE);
         }
@@ -412,61 +479,113 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
                     attendanceArrayList.get(position).setCheck_box(1);
                     check = check + 1;
                 } else {
-                    attendanceArrayList.get(position).setCheck_box(0);
-                    check = check - 1;
+                    if (searchTextCount.length() == 0) {
+                        Log.e("searchTextCount1", "***** " + searchTextCount);
+                        checkbox_selectall.setVisibility(View.GONE);
+                        checkbox_dummy.setVisibility(View.VISIBLE);
+                        checkbox_dummy.setChecked(false);
+                        attendanceArrayList.get(position).setCheck_box(0);
+                        check = check - 1;
+                    } else {
+                        Log.e("searchTextCount2", "***** " + searchTextCount);
+                        checkbox_selectall.setVisibility(View.GONE);
+                        checkbox_dummy.setVisibility(View.GONE);
+                        checkbox_dummy.setChecked(false);
+                        attendanceArrayList.get(position).setCheck_box(0);
+                        check = check - 1;
+                        status = 0;
+                    }
+
                 }
                 attendanceRecyclerAdapter.notifyDataSetChanged();
             }
         });
     }
 
+   /* private void absentConfirmation(final int position) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        final EditText edittext = new EditText(this);
+        currentPosition = position;
+        final DepartmentAttendance attendance = attendanceArrayList.get(0);
+        if (check > 0) {
+            if (attendance.getAttendance() != Constants.WORKINGDAYNOTASSIGN) {
+                builder.setTitle("Confirmation");
+                String ap = "";
+                ap = "Absent";
+                edittext.setHint("Enter Reason for absent");
+                String message = "Do you want to mark " + ap + "?";
+                builder.setMessage(message);
+                builder.setView(edittext);
+
+                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                        reasonEditText = edittext.getText().toString();
+
+                        markAttendance(currentPosition);
+
+                    }
+                });
+
+                builder.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // what ever you want to do with No option.
+                    }
+                });
+                builder.show();
+            }
+        } else {
+            Toast.makeText(this, "Please select atleast one student", Toast.LENGTH_SHORT).show();
+        }
+    }*/
 
     private void confirmation(final int position) {
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(this);
-
+        builder.setCancelable(false);
         currentPosition = position;
         final DepartmentAttendance attendance = attendanceArrayList.get(0);
         Log.e("ashuydvbhjdv :", currentdate);
         Log.e("ashuydvbhjdvajkhdvb :", tvDate.getText().toString());
-        if (check == 0) {
-            Toast.makeText(this, "Please Select a Staff Member", Toast.LENGTH_SHORT).show();
-        } else if (check > 0) {
-            if (currentdate.equals(tvDate.getText())) {
-                if (attendance.getAttendance() != Constants.WORKINGDAYNOTASSIGN) {
-                    /*if (attendance.getAttendance() == Constants.PRESENT || attendance.getAttendance() == Constants.ABSENT || attendance.getAttendance() == Constants.HALFDAYATTEN || attendance.getAttendance() == Constants.LEAVEDAY || attendance.getAttendance() == Constants.NONWORKINGDAY || attendance.getAttendance() == Constants.SCHOOLHOLIDAY) {*/
-                    builder.setTitle("Confirmation");
-                    String ap = "";
-                    if (position == 1) {
-                        ap = "Present";
-                    } else if (position == 2) {
-                        ap = "Absent";
-                    } else if (position == 3) {
-                        ap = "No Class";
-                    }
-
-                    //if condition for absent
-                    String message = "Do you want to mark " + ap + "?";
-                    builder.setMessage(message);
-                    builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            /// TODO call Api here
-                            markAttendance(currentPosition);
-
-                        }
-                    });
-                    builder.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.show();
+        if (check > 0) {
+            //if (currentdate.equals(tvDate.getText())) {
+            if (attendance.getAttendance() != Constants.WORKINGDAYNOTASSIGN) {
+                /*if (attendance.getAttendance() == Constants.PRESENT || attendance.getAttendance() == Constants.ABSENT || attendance.getAttendance() == Constants.HALFDAYATTEN || attendance.getAttendance() == Constants.LEAVEDAY || attendance.getAttendance() == Constants.NONWORKINGDAY || attendance.getAttendance() == Constants.SCHOOLHOLIDAY) {*/
+                builder.setTitle("Confirmation");
+                String ap = "";
+                if (position == 1) {
+                    ap = "Present";
+                } else if (position == 2) {
+                    ap = "Absent";
+                } else if (position == 3) {
+                    ap = "No Class";
                 }
-            } else {
-                Toast.makeText(this, "Attendance Cannot be marked for this day...", Toast.LENGTH_SHORT).show();
+
+                //if condition for absent
+                String message = "Do you want to mark " + ap + "?";
+                builder.setMessage(message);
+                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        /// TODO call Api here
+                        markAttendance(currentPosition);
+
+                    }
+                });
+                builder.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
             }
+           /* } else {
+                Toast.makeText(this, "Attendance Cannot be marked for this day...", Toast.LENGTH_SHORT).show();
+            }*/
+        } else {
+            Toast.makeText(this, "Please Select a Staff Member", Toast.LENGTH_SHORT).show();
         }
 
         /* if (attendance.getAttendance() == Constants.WEEKNOTASSIGN || attendance.getAttendance() == Constants.NOWORKDAYTODAY || attendance.getAttendance() == Constants.HOLIDAY) {*/
@@ -482,7 +601,7 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
         try {
             if (UIUtil.isInternetAvailable(this)) {
 
-                UIUtil.startProgressDialog(this, "Please Wait.. Getting Details");
+                UIUtil.startProgressDialog(getApplicationContext(), "Please Wait.. Marking Attendance");
 /*
             final DepartmentAttendance attendance = attendanceArrayList.get(currentPosition);*/
 
@@ -490,6 +609,9 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
                 JsonObject jsonObjectnew = new JsonObject();
                 jsonObject.add("employee_id", getEmployeeId());
                 jsonObject.addProperty("user", "Employee");
+              /*  if (currentPosition == 2) {
+                    jsonObject.addProperty("reason", reasonEditText);
+                }*/
                 if (position == 1) {
                     jsonObject.addProperty("present", 1);
                 } else if (position == 2) {
@@ -506,32 +628,38 @@ public class AdminAttendanceDetail extends AppCompatActivity implements View.OnC
                 }
                 jsonObject.add("attendance", jsonObjectnew);
 
-                RetrofitAPI.getInstance(this).getApi().markEmployeeAttendance(jsonObject, new Callback<JSONObject>() {
+                RetrofitAPI.getInstance(this).getApi().markEmployeeAttendance(jsonObject, new Callback<StatusResponseClass>() {
                     @Override
-                    public void success(JSONObject object, Response response) {
-                        try {
-                            UIUtil.stopProgressDialog(getApplicationContext());
-                            Log.e("API", "markAttendance" + object.toString());
+                    public void success(final StatusResponseClass object, Response response) {
+                        if (object.getStatus() == Constants.SUCCESS) {
+                            try {
+
+                                Log.e("API", "markAttendance" + object.toString());
                    /* attendance.setAttendance(attendance.getAttendance() == Constants.PRESENT ? Constants.ABSENT : Constants.PRESENT);
 
                     attendanceArrayList.set(currentPosition, attendance);
                     attendanceRecyclerAdapter.notifyDataSetChanged();*/
-                            final Handler handler = new Handler();
-                            UIUtil.startProgressDialog(getApplicationContext(), "Please Wait.. Marking Attendance");
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    UIUtil.stopProgressDialog(getApplicationContext());
-                                    attendanceRecyclerAdapter.notifyDataSetChanged();
-                                    //check = 0;
-                                    // checkbox_selectall.setChecked(false);
-                                    checkbox_selectall.toggle();
-                                    getAttendanceDetails(true);
-                                }
-                            }, 100);
+                                UIUtil.startProgressDialog(getApplicationContext(), "Please Wait.. Marking Attendance");
+                                final Handler handler = new Handler();
 
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        UIUtil.stopProgressDialog(getApplicationContext());
+                                        attendanceRecyclerAdapter.notifyDataSetChanged();
+                                        Toast.makeText(getApplicationContext(), object.getMessage(), Toast.LENGTH_SHORT).show();
+                                        // checkbox_selectall.setChecked(false);
+
+                                        getAttendanceDetails(true);
+                                    }
+                                }, 100);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            UIUtil.stopProgressDialog(getApplicationContext());
+                            Toast.makeText(getApplicationContext(), object.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
 

@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.maxlore.edumanage.API.RetrofitAPI;
 import com.maxlore.edumanage.Activities.AdminActivities.AdminBranchActivity;
 import com.maxlore.edumanage.Activities.ParentActivities.ParentRollActivity;
@@ -50,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private List<StudentsRole> parentrolelist;
     private Boolean exit = false;
     private ImageView passvisible, passinvisible;
+    private FirebaseAnalytics mFirebaseAnalytics;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +61,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         passvisible = (ImageView) findViewById(R.id.passvisible);
         passinvisible = (ImageView) findViewById(R.id.passinvisible);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         SugarContext.init(this);
         rolelist = new ArrayList<String>();

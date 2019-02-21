@@ -23,6 +23,5 @@
 
     <include layout="@layout/content_admin_attendance_detail" />
 
-
 </android.support.design.widget.CoordinatorLayout>
 

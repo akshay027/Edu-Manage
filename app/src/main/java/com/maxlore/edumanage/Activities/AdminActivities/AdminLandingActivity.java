@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -64,6 +65,8 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+import static com.maxlore.edumanage.Utility.Constants.Pref.KEY_USER_TYPE;
+
 public class AdminLandingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private TextView tvTransfer, tvabsentstudent, tvResign, tvabsentteacher, tvTotalStudents, tvTotalEmployee, tvTotalParents, studentCount, teacherCount,
@@ -112,9 +115,11 @@ public class AdminLandingActivity extends AppCompatActivity implements Navigatio
         SugarContext.init(this);
         Menu nav_Menu = navigationView.getMenu();
         if (PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_USER_TYPE).equalsIgnoreCase("Branch Admin")) {
+            toolbar.setSubtitle(Html.fromHtml("<font color='#ffffff'>Branch Admin</font>"));
             nav_Menu.findItem(R.id.changeBranch).setVisible(false);
             nav_Menu.findItem(R.id.changeRole).setVisible(true);
         } else {
+            toolbar.setSubtitle(Html.fromHtml("<font color='#ffffff'>Admin</font>"));
             nav_Menu.findItem(R.id.changeBranch).setVisible(true);
             nav_Menu.findItem(R.id.changeRole).setVisible(false);
         }
@@ -129,6 +134,7 @@ public class AdminLandingActivity extends AppCompatActivity implements Navigatio
         branchname.setText(PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_BRANCH_NAME));
         tvUserName.setText(PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_USERNAME));
         tvEmailId.setText(PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_EMAIL));
+
 
         Log.e("branch name","==="+PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_BRANCH_NAME));
         bindAllListView();
@@ -316,6 +322,7 @@ public class AdminLandingActivity extends AppCompatActivity implements Navigatio
                         UIUtil.stopProgressDialog(getApplicationContext());
                         bindDataForDashBoard(dashRes.getDashboard());
                     } else {
+                        UIUtil.stopProgressDialog(getApplicationContext());
                         Toast.makeText(getApplicationContext(), "" + dashRes.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }

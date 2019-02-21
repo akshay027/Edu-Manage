@@ -74,6 +74,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@color/black_overlay" />
 
                 <LinearLayout
@@ -124,6 +126,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@color/black_overlay" />
 
                 <LinearLayout
@@ -205,6 +209,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@color/black_overlay" />
 
                 <LinearLayout
@@ -244,7 +250,12 @@
                     </LinearLayout>
 
                 </LinearLayout>
-
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/black_overlay" />
                 <TextView
                     android:id="@+id/btnCreate"
                     android:layout_width="match_parent"

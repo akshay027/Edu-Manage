@@ -205,8 +205,6 @@ public class ProfileActivity extends AppCompatActivity {
                         editMobileno(profile);
                     }
                 }
-
-
             }
         });
         alert.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
@@ -223,7 +221,7 @@ public class ProfileActivity extends AppCompatActivity {
                 UIUtil.startProgressDialog(this, "Please Wait.. Getting Details");
                 JsonObject jsonObject = new JsonObject();
                 JsonObject jsonObjectnew = new JsonObject();
-                jsonObjectnew.addProperty("e_mobile", profile.getAcknowledgement());
+                jsonObjectnew.addProperty("primary_contact_number", profile.getAcknowledgement());
                 jsonObject.add("user", jsonObjectnew);
                 jsonObject.addProperty("branch_id", PreferencesManger.getStringFields(getApplicationContext(), Constants.Pref.KEY_BRANCH_ID));
                 RetrofitAPI.getInstance(this).getApi().editemail(jsonObject, new Callback<JsonObject>() {

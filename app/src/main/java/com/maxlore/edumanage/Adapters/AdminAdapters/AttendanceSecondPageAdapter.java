@@ -4,6 +4,7 @@ package com.maxlore.edumanage.Adapters.AdminAdapters;
  * Created by maxlore on 06-Oct-16.
  */
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -72,7 +73,7 @@ public class AttendanceSecondPageAdapter extends RecyclerView.Adapter<Attendance
             holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.nonworkingdayatten));
            /* holder.tv_atttype.setText("NO WORK DAY TODAY");*/
         } else if ((attendance.getAttendance() == Constants.FUTUREDATE)) {
-            holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.sender));
+            holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.skyBluelight));
          /*   holder.tv_atttype.setText("FUTURE DATE");*/
         } else if ((attendance.getAttendance() == Constants.SCHOOLHOLIDAY)) {
             holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.holidayatten));
@@ -83,6 +84,10 @@ public class AttendanceSecondPageAdapter extends RecyclerView.Adapter<Attendance
         } else if ((attendance.getAttendance() == Constants.LEAVEDAY)) {
             holder.viewPresentAbsent.setBackgroundColor(activity.getResources().getColor(R.color.leaveatten));
          /* holder.tv_atttype.setText("LEAVE APPLIED");*/
+        }
+        else if ((attendance.getAttendance() == Constants.NORMAL_DAYS)) {
+            holder.viewPresentAbsent.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.border_style));
+            /* holder.tv_atttype.setText("LEAVE APPLIED");*/
         }
         holder.tvStudent.setText(attendance.getEmployeeName());
         if (attendance.getCheck_box() == 1) {

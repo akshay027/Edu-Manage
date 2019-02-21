@@ -392,17 +392,19 @@ public class ParentLandingActivity extends AppCompatActivity implements Navigati
                     @Override
                     public void success(ParentDashboardResponse dashRes, Response response) {
                         try {
-                            UIUtil.stopProgressDialog(getApplicationContext());
+
                             Log.e("API", "dashboardResponses" + dashRes.toString());
                             Log.e("API", "dashboardResponses" + response.getBody());
 
                             checkForTripStatus();
 
                             if (dashRes.getStatus() == Constants.SUCCESS) {
+                                UIUtil.stopProgressDialog(getApplicationContext());
                                 bindData(dashRes.getDashboard());
                                 // updateSpinner();
 
                             } else {
+                                UIUtil.stopProgressDialog(getApplicationContext());
                                 Toast.makeText(getApplicationContext(), "" + dashRes.getMessage(), LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {

@@ -22,17 +22,15 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/textBlackDark" />
 
-
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
             android:background="@color/textBlackLight" />
 
-
         <TextView
             android:id="@+id/tvTTPeriod"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.8"
             android:gravity="center"
             android:padding="3dp"
@@ -48,7 +46,7 @@
         <TextView
             android:id="@+id/tvTTSubject"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:maxLines="2"
@@ -65,13 +63,13 @@
         <TextView
             android:id="@+id/tvTTtiming"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1.5"
             android:padding="3dp"
             android:gravity="center"
             android:singleLine="false"
             android:maxLines="2"
-            android:text="Timing"
+            android:text="Timings"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/textBlackDark" />
 

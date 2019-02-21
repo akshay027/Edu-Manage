@@ -103,7 +103,7 @@ public class AdminTeacherTimeTableFragment extends Fragment {
             @Override
             public void onTextChanged(final CharSequence s, int start, int before, int count) {
 
-                if (!TextUtils.isEmpty(s) && s.length() > 2) {
+                if (!TextUtils.isEmpty(s) && s.length() > 0) {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {

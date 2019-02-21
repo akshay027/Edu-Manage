@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -16,72 +17,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
-
-                <com.exalogic.edumanage.widgets.RoundedImageView
-                    android:id="@+id/ivStatus"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/ic_leaveapproved" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="     Approved"
-                    android:textColor="#000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
-
-                <com.exalogic.edumanage.widgets.RoundedImageView
-                    android:id="@+id/leavecancelled"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/ic_leavecancelled" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="    Rejected"
-                    android:textColor="#000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
-
-                <com.exalogic.edumanage.widgets.RoundedImageView
-                    android:id="@+id/leaveonhold"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/ic_leaveonhold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="     On Hold"
-                    android:textColor="#000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/border_am_pm"
                 android:orientation="horizontal">
@@ -91,9 +26,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="10dp"
-                    android:background="@color/green"
+                    android:background="#54be54"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -114,9 +49,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="10dp"
-                    android:background="@color/red"
+                    android:background="#ff5454"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -137,9 +72,56 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="10dp"
-                    android:background="@color/textBlackLight"
+                    android:background="@drawable/border_style"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+
+                    app:srcCompat="@drawable/ic_leaves" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="    Attendance Not Yet Marked"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/border_am_pm"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/nonworkingdayatten"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_leaves" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="    No Class"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/border_am_pm"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/holidayatten"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -160,38 +142,15 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="10dp"
-                    android:background="@color/sender"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="    No Work Day Today"
-                    android:textColor="#000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="10dp"
                     android:background="@color/receiver"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="    Week Not Assigned"
+                    android:text="    Working Days Not Assigned"
                     android:textColor="#000" />
             </LinearLayout>
 
@@ -206,9 +165,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="10dp"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/skyBluelight"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -229,38 +188,15 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="10dp"
-                    android:background="@color/orange"
+                    android:background="@color/halfdayatten"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="    Holiday Attendance Mark"
-                    android:textColor="#000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/border_am_pm"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="10dp"
-                    android:background="@color/sender"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="    Work Day Previous"
+                    android:text="    HalfDay"
                     android:textColor="#000" />
             </LinearLayout>
 
@@ -277,7 +213,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/green_dark"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -300,7 +236,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/skyBlue"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -319,11 +255,11 @@
 
                 <View
                     android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_height="29dp"
                     android:layout_margin="10dp"
                     android:background="@color/halfday"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -346,7 +282,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/leave"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -367,9 +303,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_margin="10dp"
-                    android:background="@color/holiday"
+                    android:background="@color/black"
                     android:padding="10dp"
-                    android:src="@drawable/ic_leaves" />
+                    app:srcCompat="@drawable/ic_leaves" />
 
                 <TextView
                     android:id="@+id/textView6"

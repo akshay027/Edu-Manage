@@ -113,7 +113,7 @@ public interface RetrofitAPIInterface {
     public void getAttendanceDetails(@QueryMap Map<String, String> params, Callback<AttendanceResponse> attendance);
 
     @POST("/mark_employee_student_attendance")
-    public void markAttendance(@Body JsonObject date, Callback<JSONObject> attendance);
+    public void markAttendance(@Body JsonObject date, Callback<StatusResponseClass> attendance);
 
     @GET("/registrations/sign_out")
     public void logout(@QueryMap Map<String, String> params, Callback<JSONObject> logout);
@@ -304,7 +304,7 @@ public interface RetrofitAPIInterface {
     public void getempstuattendance(@QueryMap Map<String, String> params, Callback<TeachersResponse> teachersResponseCallback);
 
     @POST("/mark_employee_student_attendance")
-    public void markEmployeeAttendance(@Body JsonObject date, Callback<JSONObject> attendance);
+    public void markEmployeeAttendance(@Body JsonObject date, Callback<StatusResponseClass> attendance);
 
     @GET("/employee_student_attendance")
     public void getStudentAdminAttendanceDetails(@QueryMap Map<String, String> params, Callback<StudentsResponse> studentsResponseCallback);

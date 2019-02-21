@@ -584,7 +584,7 @@ public class AdminHoliday extends AppCompatActivity implements View.OnClickListe
         } else {
             etReason.setError(null);
         }
-        for (int i = 0; i < holidayArrayList.size(); i++) {
+   /*     for (int i = 0; i < holidayArrayList.size(); i++) {
             if (tvFromDate.getText().toString().equalsIgnoreCase(holidayArrayList.get(i).getHolidayDate()) ||
                     tvToDate.getText().toString().equalsIgnoreCase(holidayArrayList.get(i).getHolidayEndDate())
                     || tvFromDate.getText().toString().equalsIgnoreCase(holidayArrayList.get(i).getHolidayEndDate()) ||
@@ -594,7 +594,7 @@ public class AdminHoliday extends AppCompatActivity implements View.OnClickListe
                 //Toast.makeText(getApplicationContext(), "Holiday already created for this date", Toast.LENGTH_SHORT).show();
                 return false;
             }
-        }
+        }*/
         return true;
     }
 
